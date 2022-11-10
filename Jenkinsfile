@@ -24,20 +24,6 @@ pipeline {
       }
     }
     
-    stage('JUnit/Mockito') {
-      steps {
-        script {
-          sh ''
-          'mvn -version
-          mvn - B - DskipTests clean package ''
-          '
-
-          echo ""
-          "Bravo! tous les tests sont pris en charge"
-          ""
-        }
-      }
-    }
     
     stage("SonarQube Analysis") {
       steps {
