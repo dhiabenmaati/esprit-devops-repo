@@ -10,8 +10,7 @@ pipeline{
                 
                 
                     
-git branch: '/repo-abdessalem', url: 'https://github.com/dhiabenmaati/esprit-devops-repo.git'                
-            }
+                git branch: 'repo-abdessalem', url: 'https://github.com/dhiabenmaati/esprit-devops-repo.git'            }
         
             }
         }
