@@ -8,10 +8,10 @@ pipeline{
             
             steps{
                 
-                script{
+                
                     
                      git branch: 'repo-abdessalem', url: 'https://github.com/dhiabenmaati/esprit-devops-repo.git'
-                }
+                
             }
         
             }
