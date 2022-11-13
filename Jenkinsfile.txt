@@ -1,5 +1,4 @@
-pipeline{
-    
+    pipeline{
     agent any 
     
     stages {
@@ -10,10 +9,11 @@ pipeline{
                 
                 script{
                     
-                   git branch: 'repo-abdessalem', url: 'https://github.com/dhiabenmaati/esprit-devops-repo.git'
+checkout([$class: 'GitSCM', branches: [[name: '*/repo-abdessalem']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/dhiabenmaati/esprit-devops-repo.git']]])pipeline{
                 }
             }
         
             }
         }
-} 
+}
+}
