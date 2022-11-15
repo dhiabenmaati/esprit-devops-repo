@@ -15,7 +15,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: abdessalem007/springprojet:latest
+    image: abdessalem007/springprojet
     container_name: springboot_container
     ports:
       - 8089:8089
