@@ -54,7 +54,7 @@ pipeline {
                      sh "docker login -u bouchiba -p ${DockerhubPWS}"
                      }
                      sh 'docker push bouchiba/spring:2.2.4'
-                   }""
+                   }
               }
               stage('DOCKER COMPOSE') {
                    steps {
