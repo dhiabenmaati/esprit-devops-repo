@@ -10,8 +10,8 @@ services:
   volumes:
     - /home/mysqldata:/var/lib/mysql
  spring_app:
-  image: aminetr/springapp
-  container_name: spring1
+  image: dhiabm/springapp
+  container_name: spring-container
   restart: on-failure
   ports:
    - 8089:8089
