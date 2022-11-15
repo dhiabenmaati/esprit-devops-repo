@@ -1,4 +1,3 @@
-FROM openjdk:11
-EXPOSE 8089
-ADD target/spring.jar spring.jar
-ENTRYPOINT ["java","-jar","/spring.jar"]
+FROM openjdk:8-jdk-alpine
+COPY target/tpAchatProject-1.0.jar tpAchatProject-1.0.jar
+ENTRYPOINT ["java","-jar","/tpAchatProject-1.0.jar"]
