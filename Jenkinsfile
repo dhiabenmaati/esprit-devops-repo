@@ -41,6 +41,26 @@ pipeline {
                   nexusArtifactUploader artifacts: [[artifactId: 'achat', classifier: '', file: '/var/lib/jenkins/workspace/devopsBackend/target/achat-1.0.jar', type: 'jar']], credentialsId: 'nexus-snapshots', groupId: 'tn.esprit.rh', nexusUrl: '192.168.0.14:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'nexus-snapshots', version: '2.2.4'
                  }
               }
+              
+                            stage('Build Docker Image') {
+                 steps {
+                 sh 'docker build -t bouchiba/spring:2.2.4 .'
+                 }
+              }
+
+              stage('Push Docker Image') {
+                   steps {
+                     withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
+                     sh "docker login -u bouchiba -p ${DockerhubPWS}"
+                     }
+                     sh 'docker push bouchiba/spring:2.2.4'
+                   }
+              }
+              stage('DOCKER COMPOSE') {
+                   steps {
+                      sh 'docker-compose up -d --build'
+                   }
+              }
   
           }
               
