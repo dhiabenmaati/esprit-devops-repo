@@ -43,7 +43,7 @@ public class SecteurServiceTest {
 		Assertions.assertNotNull(secteur);
 
 		System.out.println(secteur);
-		System.out.println("Get By ID works perfectly !!!");
+		System.out.println("STAGE ID WORKS !!!");
 	}
 
 
@@ -55,7 +55,7 @@ public class SecteurServiceTest {
 		SecteurService.addSecteurActivite(secteur2);
 		verify(SecteurRepository, times(1)).save(secteur2);
 		System.out.println(secteur2); 
-		System.out.println(" Create is working correctly...!!");  
+		System.out.println(" CreateSTAGE CREATE WORKS !!");  
 	}
 
 
@@ -72,7 +72,7 @@ public class SecteurServiceTest {
 		when(SecteurService.retrieveAllSecteurActivite()).thenReturn(SecteurList);
 		List<SecteurActivite> sList = SecteurService.retrieveAllSecteurActivite();
 		assertEquals(3, sList.size());
-		System.out.println("Alles Gut !!!!");
+		System.out.println("STAGE RETREIVE WORKS !!");
 
 	}
 
@@ -88,7 +88,7 @@ public class SecteurServiceTest {
 		verify(SecteurRepository).deleteById(secteur1.getIdSecteurActivite());
 
 		System.out.println(secteur1);
-		System.out.println(" Delete is working correctly...!!");  
+		System.out.println(" DELETE WORKS !");  
 
 	}
 
