@@ -1,27 +1,21 @@
-version: "3.3"
+version: "3.4"
 
 services:
-  mysqldb:
-    image: mysql:5.7
-    container_name: mysqldb_container
-    restart: unless-stopped
+  mysql-containerFinal1:
+    container_name: mysql-containerFinal1
+    ports:
+      - '3306:3306'
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=achatdb
-    ports:
-      - 3306:3306
+      - MYSQL_DATABASE=1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    restart: always
     volumes:
-      - db:/var/lib/mysql
-  app:
+      - mysql-containerFinal1:/var/lib/mysql:rw
+    image: 'mysql:latest'
+  dockerfile_springFinal1:
     depends_on:
-      - mysqldb
-    image: abdessalem007/springprojet
-    container_name: springboot_container
+      - mysql-containerFinal1
+    container_name: dockerfile_springFinal1
     ports:
-      - 8089:8089
-    volumes:
-      - .m2:/root/.m2
-    stdin_open: true
-    tty: true
-volumes:
-  db:
+      - '8089:8089'
+    image: abdessalem007/spring:2.2.4
