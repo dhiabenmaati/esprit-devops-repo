@@ -64,6 +64,12 @@ public class Operateur implements Serializable{
 	public void setFactures(Set<Facture> factures) {
 		this.factures = factures;
 	}
+	public Operateur(String nom, String prenom, String password) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.password = password;
+	}
 	
 	
 	
